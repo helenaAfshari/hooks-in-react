@@ -38,15 +38,18 @@ import Login from "./component/login/login";
 import { createContext, useState } from "react";
 
 // مقدار اولیه داخل پرانتز میزاریم 
-const appContext = createContext(null)
+const AppContext = createContext(null)
 export default function App() {
 
   const [isLogin,setIsLogin] = useState(false)
   return (
-    <Routes>
+  // هرچی که بخواییم بهش پاس بدیم در خودش داشته باشه را مینویسیم
+    <AppContext.Provider value={{isLogin}}>
+      <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/articles" element={<Articles />} />
       <Route path="/login" element={<Login/>}/>
     </Routes>
+    </AppContext.Provider>
   );
 }

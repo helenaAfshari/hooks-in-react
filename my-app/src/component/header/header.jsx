@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import "./header.css";
 
 export default function Header() {
+  const {} = useContext()
   return (
     <header className="header">
       <div> {false ? (<span>هانا افشاری</span> ) : ( <button className="login-button" type="button">نام کاربری</button> )} </div>
