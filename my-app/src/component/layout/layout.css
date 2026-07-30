@@ -1,0 +1,14 @@
+.layout {
+  min-height: 100vh;
+  direction: rtl;
+  background-color: #f4f8f8;
+}
+
+.layout-main {
+  width: 100%;
+  min-height: calc(100vh - 70px);
+}
+
+.content-wrapper {
+  width: 100%;
+}

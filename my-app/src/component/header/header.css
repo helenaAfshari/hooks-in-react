@@ -1,0 +1,81 @@
+.header {
+  direction: rtl;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 40px;
+  background-color: #2e817e;
+  color: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.header-menu {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.header-menu a {
+  color: white;
+  font-size: 16px;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.header-menu a:hover {
+  opacity: 0.75;
+}
+
+.login-button {
+  padding: 9px 18px;
+  border: none;
+  border-radius: 8px;
+  background-color: white;
+  color: #2e817e;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.login-button:hover {
+  background-color: #f1f5f5;
+}
+
+.user-name {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.logout-button {
+  border: none;
+  background: transparent;
+  color: white;
+  font-family: inherit;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.logout-button:hover {
+  opacity: 0.75;
+}
+
+@media (max-width: 600px) {
+  .header {
+    padding: 14px 16px;
+  }
+
+  .header-menu {
+    gap: 14px;
+  }
+
+  .header-menu a,
+  .logout-button {
+    font-size: 14px;
+  }
+
+  .login-button {
+    padding: 8px 12px;
+  }
+}
