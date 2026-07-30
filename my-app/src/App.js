@@ -30,20 +30,20 @@
 //   return <p>read <strong>{props.count}</strong></p>
 
 // }
+
 import { Route, Routes } from "react-router-dom";
-import { createContext, useState } from "react";
+import { useState } from "react";
 
 import Home from "./pages/home/home";
 import Articles from "./pages/articles/article";
 import Login from "./component/login/login";
-
-export const AppContext = createContext(null);
+import { AppContext } from "./context/app-context";
 
 export default function App() {
   const [isLogin, setIsLogin] = useState(false);
 
   return (
-    <AppContext.Provider value={{ isLogin, setIsLogin }}>
+    <AppContext.Provider value={{ isLogin }}>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/articles" element={<Articles />} />
@@ -52,3 +52,30 @@ export default function App() {
     </AppContext.Provider>
   );
 }
+
+
+
+
+// این درسته
+// import { Route, Routes } from "react-router-dom";
+// import { createContext, useState } from "react";
+
+// import Home from "./pages/home/home";
+// import Articles from "./pages/articles/article";
+// import Login from "./component/login/login";
+
+// export const AppContext = createContext(null);
+
+// export default function App() {
+//   const [isLogin, setIsLogin] = useState(false);
+
+//   return (
+//     <AppContext.Provider value={{ isLogin, setIsLogin }}>
+//       <Routes>
+//         <Route path="/" element={<Home />} />
+//         <Route path="/articles" element={<Articles />} />
+//         <Route path="/login" element={<Login />} />
+//       </Routes>
+//     </AppContext.Provider>
+//   );
+// }
