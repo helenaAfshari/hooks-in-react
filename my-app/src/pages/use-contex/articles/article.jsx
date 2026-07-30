@@ -1,11 +1,14 @@
 
-import Article from "../../component/article/article";
-import Layout from "../../component/layout/layout";
+import { useContext } from "react";
+import Article from "../../../component/use-contex-hook/article/article";
+import Layout from "../../../component/use-contex-hook/layout/layout";
+import { AppContext } from "../../../context/use-contex/app-context";
 
 export default function Articles() {
+  const {isLogin} = useContext(AppContext)
   return (
     <Layout>
-      {false ? (
+      {isLogin ? (
         <div>
           <h1>لیست مقالات</h1>
 

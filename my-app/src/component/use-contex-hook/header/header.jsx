@@ -1,11 +1,11 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 
-import { AppContext } from "../../context/app-context";
+import { AppContext } from "../../../context/use-contex/app-context";
 import "./header.css";
 
 export default function Header() {
-  const { isLogin } = useContext(AppContext);
+  const { isLogin,setIsLogin } = useContext(AppContext);
 
   return (
     <header className="header">
@@ -30,7 +30,7 @@ export default function Header() {
           </li>
 
           <li>
-            <span>خروج</span>
+            <span onClick={()=>setIsLogin(false)}>خروج</span>
           </li>
         </ul>
       </nav>

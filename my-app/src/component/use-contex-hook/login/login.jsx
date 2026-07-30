@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import "./login.css";
+import { AppContext } from "../../../context/use-contex/app-context";
 
 export default function Login() {
   const [username, setUsername] = useState("");
@@ -13,7 +14,7 @@ export default function Login() {
       password,
     });
   }
-
+    const {setIsLogin} = useContext(AppContext)
   return (
     <div className="login-page">
       <form className="login-form" onSubmit={handleSubmit}>
@@ -21,7 +22,6 @@ export default function Login() {
 
         <div className="login-field">
           <label htmlFor="username">نام کاربری</label>
-
           <input
             id="username"
             type="text"
@@ -43,7 +43,7 @@ export default function Login() {
           />
         </div>
 
-        <button className="login-submit-button" type="submit">
+        <button onClick={()=>setIsLogin(true)} className="login-submit-button" type="submit">
           ورود
         </button>
       </form>
