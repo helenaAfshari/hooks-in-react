@@ -30,26 +30,25 @@
 //   return <p>read <strong>{props.count}</strong></p>
 
 // }
-
 import { Route, Routes } from "react-router-dom";
+import { createContext, useState } from "react";
+
 import Home from "./pages/home/home";
 import Articles from "./pages/articles/article";
 import Login from "./component/login/login";
-import { createContext, useState } from "react";
 
-// مقدار اولیه داخل پرانتز میزاریم 
-const AppContext = createContext(null)
+export const AppContext = createContext(null);
+
 export default function App() {
+  const [isLogin, setIsLogin] = useState(false);
 
-  const [isLogin,setIsLogin] = useState(false)
   return (
-  // هرچی که بخواییم بهش پاس بدیم در خودش داشته باشه را مینویسیم
-    <AppContext.Provider value={{isLogin}}>
+    <AppContext.Provider value={{ isLogin, setIsLogin }}>
       <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/articles" element={<Articles />} />
-      <Route path="/login" element={<Login/>}/>
-    </Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/articles" element={<Articles />} />
+        <Route path="/login" element={<Login />} />
+      </Routes>
     </AppContext.Provider>
   );
 }
